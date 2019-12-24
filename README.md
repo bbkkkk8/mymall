@@ -28,3 +28,21 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+# 学习过程记录
+## 静态文件
+  * 小图片放入assets中会转为base64编码
+  * 图片等静态文件放在static不会转base64
+
+  * 不清楚为啥图片引入需要引入相对路径才能显示如：
+    src='/static/1.jpg'; 无法显示，但是使用 src='../../static/1.jpg';就可以展示
+
+  1. 
+  2. test 
+
+  ```bash
+
+   # test
+      var a=11;
+
+  ```
