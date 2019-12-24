@@ -51,6 +51,8 @@ module.exports = {
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+    // assetsSubDirectory: './static',// 子目录---解决css相对路径的问题
+    // assetsPublicPath: './', //资源专用路径---解决JS路径问题
 
     /**
      * Source Maps
