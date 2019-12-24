@@ -42,7 +42,7 @@
               <ul>
                 <li>
                   <div class="pic">
-                    <a href="#"><img src="/static/1.jpg"
+                    <a href="#"><img src="../../static/1.jpg"
                            alt=""></a>
                   </div>
                   <div class="main">
@@ -56,7 +56,7 @@
                 </li>
                 <li>
                   <div class="pic">
-                    <a href="#"><img src="/static/2.jpg"
+                    <a href="#"><img src="../../static/2.jpg"
                            alt=""></a>
                   </div>
                   <div class="main">
@@ -70,7 +70,7 @@
                 </li>
                 <li>
                   <div class="pic">
-                    <a href="#"><img src="/static/3.jpg"
+                    <a href="#"><img src="../../static/3.jpg"
                            alt=""></a>
                   </div>
                   <div class="main">
@@ -84,7 +84,7 @@
                 </li>
                 <li>
                   <div class="pic">
-                    <a href="#"><img src="/static/4.jpg"
+                    <a href="#"><img src="../../static/4.jpg"
                            alt=""></a>
                   </div>
                   <div class="main">
