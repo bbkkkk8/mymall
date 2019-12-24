@@ -1,6 +1,9 @@
 <template>
   <div>
     <nevheader></nevheader>
+    <nevbread>
+      <span>Goods</span>
+    </nevbread>
     <div class="accessory-result-page accessory-page">
       <div class="container">
         <div class="filter-nav">
@@ -112,10 +115,12 @@ import './../assets/css/base.css'
 import './../assets/css/product.css'
 import nevheader from '@/components/header.vue'
 import nevfooter from '@/components/footer.vue'
+import nevbread from '@/components/bread.vue'
+
 export default {
   data () {
     return {}
   },
-  components: { nevheader, nevfooter }
+  components: { nevheader, nevfooter, nevbread }
 }
 </script>
