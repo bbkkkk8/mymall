@@ -116,11 +116,23 @@ import './../assets/css/product.css'
 import nevheader from '@/components/header.vue'
 import nevfooter from '@/components/footer.vue'
 import nevbread from '@/components/bread.vue'
+import axios from 'axios'
 
 export default {
   data () {
-    return {}
+    return { goodsList: [] }
   },
-  components: { nevheader, nevfooter, nevbread }
+  components: { nevheader, nevfooter, nevbread },
+  mounted () {
+    this.getGoodsList()
+  },
+  methods: {
+    getGoodsList () {
+      axios.get('/goods').then((result) => {
+        var res = result.data
+        this.getGoodsList = res.result
+      })
+    }
+  }
 }
 </script>
