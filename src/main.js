@@ -3,7 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
+// 引入mock数据，关闭则注释该行
+require('../mock')
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
