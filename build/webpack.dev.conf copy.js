@@ -13,12 +13,6 @@ const portfinder = require('portfinder')
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
-const express = require('express')
-const app = express()
-const router = express.Router()
-const goodListData = require('../mock/goods.json')
-app.use('/api', router)
-
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({ sourceMap: config.dev.cssSourceMap, usePostCSS: true })
@@ -28,11 +22,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 
   // these devServer options should be customized in /config/index.js
   devServer: {
-    before (app) {
-      app.get('/api/goodList', (req, res, next) => {
-        res.json(goodListData)
-      })
-    },
     clientLogLevel: 'warning',
     historyApiFallback: {
       rewrites: [
