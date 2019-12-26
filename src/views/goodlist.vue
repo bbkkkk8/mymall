@@ -22,19 +22,15 @@
           <div class="filter stopPop"
                id="filter">
             <dl class="filter-price">
-              <dt>Price:</dt>
-              <dd><a href="javascript:void(0)">All</a></dd>
-              <dd>
-                <a href="javascript:void(0)">0 - 100</a>
-              </dd>
-              <dd>
-                <a href="javascript:void(0)">100 - 500</a>
-              </dd>
-              <dd>
-                <a href="javascript:void(0)">500 - 1000</a>
-              </dd>
-              <dd>
-                <a href="javascript:void(0)">1000 - 2000</a>
+              <dt>Price:{{priceChecked}}</dt>
+              <dd><a href="javascript:void(0)"
+                   @click="priceChecked='all'"
+                   v-bind:class="{'cur':priceChecked=='all'}">All</a></dd>
+              <dd v-for="(price,index) in priceFilter"
+                  :key="price.startPrice">
+                <a href="javascript:void(0)"
+                   @click="priceChecked=index"
+                   v-bind:class="{'cur':priceChecked==index}">{{index}}:{{price.startPrice}} - {{price.endPrice}}</a>
               </dd>
             </dl>
           </div>
@@ -43,9 +39,10 @@
           <div class="accessory-list-wrap">
             <div class="accessory-list col-4">
               <ul>
-                <li  v-for=" item in goodsList" :key="item.productId">
+                <li v-for=" item in goodsList"
+                    :key="item.productId">
                   <div class="pic">
-                    <a href="#"><img src="../../static/{{ item.prodcutImg }}"
+                    <a href="#"><img v-bind:src="'../../static/'+item.prodcutImg"
                            alt=""></a>
                   </div>
                   <div class="main">
@@ -79,7 +76,18 @@ import axios from 'axios'
 
 export default {
   data () {
-    return { goodsList: [] }
+    return {
+      goodsList: [],
+      priceFilter: [
+        { startPrice: '0.00', endPrice: '500.00' },
+        { startPrice: '500.00', endPrice: '1000.00' },
+        { startPrice: '1500.00', endPrice: '2500.00' },
+        { startPrice: '2500.00', endPrice: '3000.00' },
+        { startPrice: '3500.00', endPrice: '4000.00' }
+
+      ],
+      priceChecked: 'all'
+    }
   },
   components: { nevheader, nevfooter, nevbread },
   mounted () {
